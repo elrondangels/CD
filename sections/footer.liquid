@@ -83,31 +83,36 @@
       </div>
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer__bottom">
-      <div class="footer__copyright">
-        <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
-      </div>
-      <div class="footer__payment-methods">
-        <span class="payment-label">We Accept:</span>
-        <div class="payment-icons">
-          <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
-            <rect width="32" height="20" rx="2" fill="#1A1F71"/>
-            <path d="M12.5 6.5H19.5V13.5H12.5V6.5Z" fill="#FF5F00"/>
-            <path d="M14 10C14 8.89543 14.8954 8 16 8C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12C14.8954 12 14 11.1046 14 10Z" fill="#FF5F00"/>
-          </svg>
-          <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
-            <rect width="32" height="20" rx="2" fill="#000"/>
-            <path d="M10 6L22 6V14L10 14V6Z" fill="#EB001B"/>
-            <path d="M16 10C16 8.89543 16.8954 8 18 8C19.1046 8 20 8.89543 20 10C20 11.1046 19.1046 12 18 12C16.8954 12 16 11.1046 16 10Z" fill="#F79E1B"/>
-          </svg>
-          <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
-            <rect width="32" height="20" rx="2" fill="#005EB8"/>
-            <circle cx="16" cy="10" r="6" fill="#F9A000"/>
-          </svg>
+      <!-- Footer Bottom -->
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+        </div>
+        <div class="footer__payment-methods">
+          <span class="payment-label">We Accept:</span>
+          <div class="payment-icons">
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#1A1F71"/>
+              <path d="M12.5 6.5H19.5V13.5H12.5V6.5Z" fill="#FF5F00"/>
+              <path d="M14 10C14 8.89543 14.8954 8 16 8C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12C14.8954 12 14 11.1046 14 10Z" fill="#FF5F00"/>
+            </svg>
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#000"/>
+              <path d="M10 6L22 6V14L10 14V6Z" fill="#EB001B"/>
+              <path d="M16 10C16 8.89543 16.8954 8 18 8C19.1046 8 20 8.89543 20 10C20 11.1046 19.1046 12 18 12C16.8954 12 16 11.1046 16 10Z" fill="#F79E1B"/>
+            </svg>
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#005EB8"/>
+              <circle cx="16" cy="10" r="6" fill="#F9A000"/>
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+
+      <!-- GSWorks Attribution -->
+      <div class="footer__attribution">
+        <p><a href="https://www.gsworks.xyz/" target="_blank" rel="noopener noreferrer">Made with ❤️ by GSWorks</a></p>
+      </div>
   </div>
 </footer>
 
@@ -307,6 +312,31 @@
   .newsletter-submit {
     width: 100%;
   }
+}
+
+/* GSWorks Attribution */
+.footer__attribution {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer__attribution p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__attribution a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer__attribution a:hover {
+  color: white;
+  text-decoration: underline;
 }
 </style>
 
