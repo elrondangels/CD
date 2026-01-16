@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Professional Consulting & Support</title>
+  <meta name="description" content="Book our professional services including consultations, custom design, and ongoing support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="body">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="/" class="logo">
+            <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="logo__image">
+          </a>
+        </div>
+        <nav class="header__nav" role="navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/products.html" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="/services.html" class="nav-link active">Services</a></li>
+            <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="header__search-toggle" aria-label="Search">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <a href="#" class="header__cart" aria-label="Cart">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="header__menu-toggle" aria-label="Menu">
+            <span class="menu-toggle__line"></span><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-overlay">
+        <div class="search-overlay__inner">
+          <form action="#" method="get" class="search-form">
+            <input type="search" name="q" placeholder="Search services..." class="search-input" autocomplete="off">
+            <button type="submit" class="search-submit">
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </form>
+          <button class="search-overlay__close" aria-label="Close search">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="/products.html" class="mobile-nav-link">Products</a></li>
+            <li class="mobile-nav-item"><a href="/services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="/about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </nav>
+      <h1 class="page-title">Our Services</h1>
+      <p class="page-description">Professional services tailored to meet your unique needs</p>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card card">
+          <div class="service-card__image">
+            <img src="https://via.placeholder.com/400x250/8B4513/FFFFFF?text=Consultation" alt="Personal Consultation">
+          </div>
+          <div class="service-card__content card__content">
+            <div class="service-card__category">Consultation</div>
+            <h3 class="service-card__title">Personal Consultation</h3>
+            <p class="service-card__description">
+              One-on-one consultation with our experts to understand your needs and provide personalized recommendations.
+            </p>
+            <div class="service-card__details">
+              <div class="service-detail">
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>60 minutes</span>
+              </div>
+            </div>
+            <div class="service-card__pricing">
+              <span class="price">$150</span>
+              <span class="price-unit">/ session</span>
+            </div>
+          </div>
+          <div class="service-card__actions">
+            <button class="btn btn-primary btn--full book-service-btn">Book Now</button>
+          </div>
+        </div>
+
+        <div class="service-card card">
+          <div class="service-card__image">
+            <img src="https://via.placeholder.com/400x250/D2691E/FFFFFF?text=Custom+Design" alt="Custom Design">
+          </div>
+          <div class="service-card__content card__content">
+            <div class="service-card__category">Design</div>
+            <h3 class="service-card__title">Custom Design Service</h3>
+            <p class="service-card__description">
+              Bespoke design solutions created specifically for your requirements. From concept to completion.
+            </p>
+            <div class="service-card__details">
+              <div class="service-detail">
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>2-4 weeks</span>
+              </div>
+            </div>
+            <div class="service-card__pricing">
+              <span class="price">Starting at $500</span>
+            </div>
+          </div>
+          <div class="service-card__actions">
+            <button class="btn btn-primary btn--full book-service-btn">Get Quote</button>
+          </div>
+        </div>
+
+        <div class="service-card card">
+          <div class="service-card__image">
+            <img src="https://via.placeholder.com/400x250/DEB887/FFFFFF?text=Maintenance" alt="Maintenance & Support">
+          </div>
+          <div class="service-card__content card__content">
+            <div class="service-card__category">Support</div>
+            <h3 class="service-card__title">Maintenance & Support</h3>
+            <p class="service-card__description">
+              Ongoing support and maintenance services to keep your solutions running smoothly.
+            </p>
+            <div class="service-card__details">
+              <div class="service-detail">
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>Monthly</span>
+              </div>
+            </div>
+            <div class="service-card__pricing">
+              <span class="price">$99</span>
+              <span class="price-unit">/ month</span>
+            </div>
+          </div>
+          <div class="service-card__actions">
+            <button class="btn btn-primary btn--full book-service-btn">Subscribe</button>
+          </div>
+        </div>
+
+        <div class="service-card card">
+          <div class="service-card__image">
+            <img src="https://via.placeholder.com/400x250/8B7355/FFFFFF?text=Training" alt="Training & Workshops">
+          </div>
+          <div class="service-card__content card__content">
+            <div class="service-card__category">Education</div>
+            <h3 class="service-card__title">Training & Workshops</h3>
+            <p class="service-card__description">
+              Educational sessions and workshops to help you make the most of our products and services.
+            </p>
+            <div class="service-card__details">
+              <div class="service-detail">
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>2-4 hours</span>
+              </div>
+            </div>
+            <div class="service-card__pricing">
+              <span class="price">$250</span>
+              <span class="price-unit">/ session</span>
+            </div>
+          </div>
+          <div class="service-card__actions">
+            <button class="btn btn-primary btn--full book-service-btn">Book Session</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step__number">1</div>
+            <h3 class="process-step__title">Choose Service</h3>
+            <p class="process-step__description">Select the service that best fits your needs</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__number">2</div>
+            <h3 class="process-step__title">Book Appointment</h3>
+            <p class="process-step__description">Schedule a convenient time for your service</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step__number">3</div>
+            <h3 class="process-step__title">Get Started</h3>
+            <p class="process-step__description">Begin your journey with our expert guidance</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="footer__logo">
+          <p class="footer__description">Premium products and exceptional services delivered with care and quality you can trust.</p>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__list">
+            <li><a href="/">Home</a></li><li><a href="/products.html">Products</a></li>
+            <li><a href="/services.html">Services</a></li><li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__heading">Stay Updated</h4>
+          <p class="footer__newsletter-text">Subscribe to our newsletter for exclusive offers and updates.</p>
+          <form class="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary newsletter-submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copyright"><p>&copy; 2024 Your Store Name. All rights reserved.</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

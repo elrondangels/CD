@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Products & Services - Modern E-Commerce Theme</title>
+  <meta name="description" content="Discover our curated collection of quality products and professional services, crafted to exceed your expectations.">
+  <link rel="canonical" href="https://your-shopify-store.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="body">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <!-- Logo -->
+        <div class="header__logo">
+          <a href="/" class="logo">
+            <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="logo__image">
+          </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="header__nav" role="navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/products.html" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="/services.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="/about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header__actions">
+          <!-- Search -->
+          <button class="header__search-toggle" aria-label="Search">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+
+          <!-- Account -->
+          <a href="#" class="header__account" aria-label="Account">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+
+          <!-- Cart -->
+          <a href="#" class="header__cart" aria-label="Cart">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="header__menu-toggle" aria-label="Menu">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Overlay -->
+      <div class="search-overlay">
+        <div class="search-overlay__inner">
+          <form action="#" method="get" class="search-form">
+            <input
+              type="search"
+              name="q"
+              placeholder="Search products..."
+              class="search-input"
+              autocomplete="off"
+            >
+            <button type="submit" class="search-submit">
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </form>
+          <button class="search-overlay__close" aria-label="Close search">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+              <a href="/" class="mobile-nav-link">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a href="/products.html" class="mobile-nav-link">Products</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a href="/services.html" class="mobile-nav-link">Services</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a href="/about.html" class="mobile-nav-link">About</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a href="/contact.html" class="mobile-nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Premium Products & Exceptional Services
+        </h1>
+        <p class="hero__subtitle">
+          Discover our curated collection of quality products and professional services, crafted to exceed your expectations.
+        </p>
+        <div class="hero__actions">
+          <a href="/products.html" class="btn btn-primary hero__cta">
+            Shop Products
+          </a>
+          <a href="/services.html" class="btn btn-secondary hero__cta">
+            Book Services
+          </a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="https://via.placeholder.com/600x400/D2691E/FFFFFF?text=Premium+Products" alt="Premium products and services" class="hero__img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collections -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header text-center">
+        <h2 class="section__title">Featured Collections</h2>
+        <p class="section__subtitle">Explore our most popular products and services</p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Products Collection -->
+        <div class="collection-card card">
+          <div class="collection-card__image">
+            <img src="https://via.placeholder.com/400x250/8B4513/FFFFFF?text=Products+Collection" alt="Products Collection">
+          </div>
+          <div class="collection-card__content card__content">
+            <h3 class="collection-card__title">Premium Products</h3>
+            <p class="collection-card__description">
+              Discover our handpicked selection of quality products, from everyday essentials to luxury items.
+            </p>
+            <a href="/products.html" class="btn btn-primary">Browse Products</a>
+          </div>
+        </div>
+
+        <!-- Services Collection -->
+        <div class="collection-card card">
+          <div class="collection-card__image">
+            <img src="https://via.placeholder.com/400x250/D2691E/FFFFFF?text=Services+Collection" alt="Services Collection">
+          </div>
+          <div class="collection-card__content card__content">
+            <h3 class="collection-card__title">Professional Services</h3>
+            <p class="collection-card__description">
+              Book our expert services for personalized consultations, custom orders, and premium support.
+            </p>
+            <a href="/services.html" class="btn btn-primary">View Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header text-center">
+        <h2 class="section__title">Featured Products</h2>
+        <p class="section__subtitle">Handpicked selections from our best-selling items</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card card">
+          <a href="/product.html" class="product-card__link">
+            <div class="product-card__image">
+              <img src="https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Product+1" alt="Premium Product 1">
+            </div>
+            <div class="product-card__content card__content">
+              <h4 class="product-card__title">Premium Product 1</h4>
+              <div class="product-card__price">
+                <span class="price--current">$49.99</span>
+              </div>
+            </div>
+          </a>
+          <div class="product-card__actions">
+            <button type="button" class="btn btn-primary btn--full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card card">
+          <a href="/product.html" class="product-card__link">
+            <div class="product-card__image">
+              <img src="https://via.placeholder.com/300x300/D2691E/FFFFFF?text=Product+2" alt="Premium Product 2">
+              <span class="product-card__badge">Sale</span>
+            </div>
+            <div class="product-card__content card__content">
+              <h4 class="product-card__title">Premium Product 2</h4>
+              <div class="product-card__price">
+                <span class="price--compare">$79.99</span>
+                <span class="price--current">$59.99</span>
+              </div>
+            </div>
+          </a>
+          <div class="product-card__actions">
+            <button type="button" class="btn btn-primary btn--full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card card">
+          <a href="/product.html" class="product-card__link">
+            <div class="product-card__image">
+              <img src="https://via.placeholder.com/300x300/DEB887/FFFFFF?text=Product+3" alt="Premium Product 3">
+            </div>
+            <div class="product-card__content card__content">
+              <h4 class="product-card__title">Premium Product 3</h4>
+              <div class="product-card__price">
+                <span class="price--current">$89.99</span>
+              </div>
+            </div>
+          </a>
+          <div class="product-card__actions">
+            <button type="button" class="btn btn-primary btn--full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card card">
+          <a href="/product.html" class="product-card__link">
+            <div class="product-card__image">
+              <img src="https://via.placeholder.com/300x300/8B7355/FFFFFF?text=Product+4" alt="Premium Product 4">
+            </div>
+            <div class="product-card__content card__content">
+              <h4 class="product-card__title">Premium Product 4</h4>
+              <div class="product-card__price">
+                <span class="price--current">$39.99</span>
+              </div>
+            </div>
+          </a>
+          <div class="product-card__actions">
+            <button type="button" class="btn btn-primary btn--full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/products.html" class="btn btn-secondary">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header text-center">
+        <h2 class="section__title">Why Choose Us</h2>
+        <p class="section__subtitle">What sets us apart from the competition</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="usp-card text-center">
+          <div class="usp-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="usp-card__title">Premium Quality</h3>
+          <p class="usp-card__description">
+            Every product and service is carefully selected and tested to meet our high standards of excellence.
+          </p>
+        </div>
+
+        <div class="usp-card text-center">
+          <div class="usp-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3 class="usp-card__title">Fast Shipping</h3>
+          <p class="usp-card__description">
+            Quick and reliable delivery with real-time tracking. Free shipping on orders over $50.
+          </p>
+        </div>
+
+        <div class="usp-card text-center">
+          <div class="usp-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="usp-card__title">Sustainable & Ethical</h3>
+          <p class="usp-card__description">
+            Committed to eco-friendly practices and ethical sourcing for a better tomorrow.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header text-center">
+        <h2 class="section__title">What Our Customers Say</h2>
+        <p class="section__subtitle">Real experiences from satisfied customers</p>
+      </div>
+
+      <div class="testimonials-slider">
+        <div class="testimonials-track">
+          <div class="testimonial-card card">
+            <div class="testimonial-card__content card__content">
+              <div class="testimonial-card__rating">
+                ★★★★★
+              </div>
+              <blockquote class="testimonial-card__quote">
+                "Exceptional quality and outstanding service. Every product exceeded my expectations, and the customer support was phenomenal."
+              </blockquote>
+              <cite class="testimonial-card__author">
+                <strong>Sarah Johnson</strong><br>
+                <span>Verified Customer</span>
+              </cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card card">
+            <div class="testimonial-card__content card__content">
+              <div class="testimonial-card__rating">
+                ★★★★★
+              </div>
+              <blockquote class="testimonial-card__quote">
+                "Fast shipping and beautiful packaging. The attention to detail in both products and presentation is remarkable."
+              </blockquote>
+              <cite class="testimonial-card__author">
+                <strong>Michael Chen</strong><br>
+                <span>Verified Customer</span>
+              </cite>
+            </div>
+          </div>
+
+          <div class="testimonial-card card">
+            <div class="testimonial-card__content card__content">
+              <div class="testimonial-card__rating">
+                ★★★★★
+              </div>
+              <blockquote class="testimonial-card__quote">
+                "The services provided were professional and personalized. Highly recommend for anyone seeking quality and expertise."
+              </blockquote>
+              <cite class="testimonial-card__author">
+                <strong>Emma Rodriguez</strong><br>
+                <span>Verified Customer</span>
+              </cite>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-nav">
+          <button class="testimonials-prev" aria-label="Previous testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"/>
+            </svg>
+          </button>
+          <div class="testimonials-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+          <button class="testimonials-next" aria-label="Next testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <!-- Brand Section -->
+        <div class="footer__brand">
+          <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="footer__logo">
+          <p class="footer__description">
+            Premium products and exceptional services delivered with care and quality you can trust.
+          </p>
+          <div class="footer__social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.017 0C8.396 0 7.609.034 6.426.094c-1.197.06-2.009.255-2.717.545-.737.3-1.365.698-1.992 1.325S.76 3.23.46 3.967C.17 4.675-.035 5.487-.095 6.684-.155 7.867-.19 8.654-.19 12.275s.035 4.408.095 5.591c.06 1.197.255 2.009.545 2.717.3.737.698 1.365 1.325 1.992s1.255.698 1.992 1.325c.708.29 1.52.485 2.717.545 1.183.06 1.97.094 5.591.094s4.408-.034 5.591-.094c1.197-.06 2.009-.255 2.717-.545.737-.3 1.365-.698 1.992-1.325s.698-1.255 1.325-1.992c.29-.708.485-1.52.545-2.717.06-1.183.094-1.97.094-5.591s-.034-4.408-.094-5.591c-.06-1.197-.255-2.009-.545-2.717-.3-.737-.698-1.365-1.325-1.992s-1.255-.698-1.992-1.325C19.325.76 18.517.465 17.32.175c-1.183-.06-1.97-.094-5.591-.094zM12.017 2.25c3.538 0 3.958.013 5.356.093 1.236.07 1.902.26 2.34.433.582.23 1.002.508 1.44.946.438.438.716.858.946 1.44.173.438.363 1.104.433 2.34.08 1.398.093 1.818.093 5.356s-.013 3.958-.093 5.356c-.07 1.236-.26 1.902-.433 2.34-.23.582-.508 1.002-.946 1.44-.438.438-.858.716-1.44.946-.438.173-1.104.363-2.34.433-1.398.08-1.818.093-5.356.093s-3.958-.013-5.356-.093c-1.236-.07-1.902-.26-2.34-.433-.582-.23-1.002-.508-1.44-.946-.438-.438-.716-.858-.946-1.44-.173-.438-.363-1.104-.433-2.34-.08-1.398-.093-1.818-.093-5.356s.013-3.958.093-5.356c.07-1.236.26-1.902.433-2.34.23-.582.508-1.002.946-1.44.438-.438.858-.716 1.44-.946.438-.173 1.104-.363 2.34-.433 1.398-.08 1.818-.093 5.356-.093zM12.017 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.468a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666zm5.338-9.87a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer__links">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="footer__links">
+          <h4 class="footer__heading">Customer Service</h4>
+          <ul class="footer__list">
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer__links">
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer__newsletter">
+          <h4 class="footer__heading">Stay Updated</h4>
+          <p class="footer__newsletter-text">
+            Subscribe to our newsletter for exclusive offers and updates.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              class="newsletter-input"
+              required
+            >
+            <button type="submit" class="btn btn-primary newsletter-submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          <p>&copy; 2024 Your Store Name. All rights reserved.</p>
+        </div>
+        <div class="footer__payment-methods">
+          <span class="payment-label">We Accept:</span>
+          <div class="payment-icons">
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#1A1F71"/>
+              <path d="M12.5 6.5H19.5V13.5H12.5V6.5Z" fill="#FF5F00"/>
+              <path d="M14 10C14 8.89543 14.8954 8 16 8C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12C14.8954 12 14 11.1046 14 10Z" fill="#FF5F00"/>
+            </svg>
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#000"/>
+              <path d="M10 6L22 6V14L10 14V6Z" fill="#EB001B"/>
+              <path d="M16 10C16 8.89543 16.8954 8 18 8C19.1046 8 20 8.89543 20 10C20 11.1046 19.1046 12 18 12C16.8954 12 16 11.1046 16 10Z" fill="#F79E1B"/>
+            </svg>
+            <svg class="payment-icon" width="32" height="20" viewBox="0 0 32 20" fill="none">
+              <rect width="32" height="20" rx="2" fill="#005EB8"/>
+              <circle cx="16" cy="10" r="6" fill="#F9A000"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

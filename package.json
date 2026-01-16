@@ -1,0 +1,29 @@
+{
+  "name": "cd",
+  "version": "1.0.0",
+  "description": "A modern, responsive Shopify theme inspired by Chocolate Delice's elegant aesthetic, designed for premium product and service businesses.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve .",
+    "build": "echo 'Build completed - Shopify theme ready for deployment'",
+    "preview": "serve . --port 3000",
+    "deploy": "vercel --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shopify",
+    "theme",
+    "ecommerce",
+    "responsive",
+    "modern",
+    "chocolate-delice"
+  ],
+  "author": "Silviu Gligore",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

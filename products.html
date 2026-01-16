@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Premium E-Commerce Store</title>
+  <meta name="description" content="Browse our collection of premium products. Quality items for every need.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="body">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="/" class="logo">
+            <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="logo__image">
+          </a>
+        </div>
+        <nav class="header__nav" role="navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/products.html" class="nav-link active">Products</a></li>
+            <li class="nav-item"><a href="/services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="header__search-toggle" aria-label="Search">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <a href="#" class="header__cart" aria-label="Cart">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle>
+              <path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="header__menu-toggle" aria-label="Menu">
+            <span class="menu-toggle__line"></span><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-overlay">
+        <div class="search-overlay__inner">
+          <form action="#" method="get" class="search-form">
+            <input type="search" name="q" placeholder="Search products..." class="search-input" autocomplete="off">
+            <button type="submit" class="search-submit">
+              <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </form>
+          <button class="search-overlay__close" aria-label="Close search">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="/products.html" class="mobile-nav-link">Products</a></li>
+            <li class="mobile-nav-item"><a href="/services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="/about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Products</span>
+      </nav>
+      <h1 class="page-title">Our Products</h1>
+      <p class="page-description">Discover our curated collection of premium products</p>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <div class="container">
+    <div class="products-layout">
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar">
+        <div class="filters-header">
+          <h3 class="filters-title">Filters</h3>
+          <button class="filters-toggle" aria-label="Toggle filters">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="21" y1="4" x2="14" y2="4"/><line x1="10" y1="4" x2="3" y2="4"/>
+              <line x1="21" y1="12" x2="12" y2="12"/><line x1="8" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="20" x2="16" y2="20"/><line x1="12" y1="20" x2="3" y2="20"/>
+              <line x1="14" y1="2" x2="14" y2="6"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="16" y1="18" x2="16" y2="22"/>
+            </svg>
+          </button>
+        </div>
+        <div class="filters-content">
+          <div class="filter-group">
+            <h4 class="filter-title">Price Range</h4>
+            <div class="price-inputs">
+              <input type="number" placeholder="Min" class="price-input" id="price-min">
+              <span>-</span>
+              <input type="number" placeholder="Max" class="price-input" id="price-max">
+            </div>
+            <button class="btn btn-outline btn--small apply-price-filter">Apply</button>
+          </div>
+          <div class="filter-group">
+            <h4 class="filter-title">Categories</h4>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <label class="filter-label">
+                  <input type="checkbox" class="filter-checkbox" value="premium">
+                  <span class="filter-checkmark"></span>
+                  Premium Collection
+                </label>
+              </li>
+              <li class="filter-item">
+                <label class="filter-label">
+                  <input type="checkbox" class="filter-checkbox" value="essentials">
+                  <span class="filter-checkmark"></span>
+                  Essentials
+                </label>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-secondary btn--small clear-filters">Clear All Filters</button>
+        </div>
+      </aside>
+
+      <!-- Products Main Content -->
+      <main class="products-main">
+        <div class="products-header">
+          <div class="products-count">8 products</div>
+          <div class="products-controls">
+            <div class="sort-dropdown">
+              <select class="sort-select">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+            <div class="view-toggle">
+              <button class="view-btn active" data-view="grid">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                  <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                </svg>
+              </button>
+              <button class="view-btn" data-view="list">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+                  <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+                  <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-grid" data-view="grid">
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Product+1" alt="Premium Product 1">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 1</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$49.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/D2691E/FFFFFF?text=Product+2" alt="Premium Product 2">
+                <span class="product-card__badge">Sale</span>
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 2</h4>
+                <div class="product-card__price">
+                  <span class="price--compare">$79.99</span>
+                  <span class="price--current">$59.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/DEB887/FFFFFF?text=Product+3" alt="Premium Product 3">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 3</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$89.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/8B7355/FFFFFF?text=Product+4" alt="Premium Product 4">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 4</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$39.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/654321/FFFFFF?text=Product+5" alt="Premium Product 5">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 5</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$69.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/A0522D/FFFFFF?text=Product+6" alt="Premium Product 6">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 6</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$54.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Product+7" alt="Premium Product 7">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 7</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$74.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="product-card card">
+            <a href="/product.html" class="product-card__link">
+              <div class="product-card__image">
+                <img src="https://via.placeholder.com/300x300/D2691E/FFFFFF?text=Product+8" alt="Premium Product 8">
+              </div>
+              <div class="product-card__content card__content">
+                <h4 class="product-card__title">Premium Product 8</h4>
+                <div class="product-card__price">
+                  <span class="price--current">$44.99</span>
+                </div>
+              </div>
+            </a>
+            <div class="product-card__actions">
+              <button type="button" class="btn btn-primary btn--full">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="https://via.placeholder.com/120x40/8B4513/FFFFFF?text=LOGO" alt="Your Store Name" class="footer__logo">
+          <p class="footer__description">Premium products and exceptional services delivered with care and quality you can trust.</p>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__list">
+            <li><a href="/">Home</a></li><li><a href="/products.html">Products</a></li>
+            <li><a href="/services.html">Services</a></li><li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__newsletter">
+          <h4 class="footer__heading">Stay Updated</h4>
+          <p class="footer__newsletter-text">Subscribe to our newsletter for exclusive offers and updates.</p>
+          <form class="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary newsletter-submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copyright"><p>&copy; 2024 Your Store Name. All rights reserved.</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
