@@ -33,10 +33,29 @@ A modern, responsive Shopify theme inspired by Chocolate Delice's elegant aesthe
 
 ## Installation
 
+### Shopify Deployment
 1. Download the theme files
 2. Upload to your Shopify store via Online Store > Themes > Upload
 3. Configure theme settings in the Shopify admin
 4. Customize content and add your products/services
+
+### Vercel Deployment (Demo/Portfolio)
+1. **Connect Repository**: Connect your GitHub repository to Vercel
+2. **Deploy**: Vercel will automatically detect the configuration and deploy
+3. **Domain**: Your site will be available at `your-project.vercel.app`
+4. **Customization**: Replace placeholder images and content with your actual assets
+
+#### Vercel Deployment Steps:
+```bash
+# Install Vercel CLI (optional)
+npm i -g vercel
+
+# Deploy from your local machine
+vercel
+
+# Or connect via Vercel's web interface
+# Go to vercel.com and import your GitHub repository
+```
 
 ## Theme Customization
 
@@ -99,6 +118,35 @@ theme/
 - **Core Web Vitals**: Optimized for excellent user experience
 - **Image Optimization**: Automatic WebP conversion and lazy loading
 - **CSS/JS Minification**: Production-ready optimized assets
+
+## Deployment Options
+
+### For Shopify Stores
+This theme is designed for Shopify e-commerce platforms. It includes:
+- Liquid templating for dynamic content
+- Shopify product collections and variants
+- Cart and checkout integration
+- Admin panel customization
+
+### For Static/Demo Deployment (Vercel)
+The project includes static HTML versions for demo purposes:
+- Complete static site with all pages
+- Responsive design maintained
+- Interactive elements (search, forms, sliders)
+- Optimized for Vercel deployment
+
+#### Vercel Configuration
+- `vercel.json`: Deployment configuration
+- `package.json`: Build scripts and dependencies
+- Static HTML files for all pages
+- Optimized asset loading
+
+#### Quick Vercel Deploy
+1. Push code to GitHub (already done)
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Connect your GitHub repository
+5. Deploy automatically
 
 ## Customization Services
 
