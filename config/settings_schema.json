@@ -1,0 +1,195 @@
+[
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_name",
+        "label": "Store Name",
+        "default": "Your Store Name"
+      },
+      {
+        "type": "url",
+        "id": "store_url",
+        "label": "Store URL"
+      },
+      {
+        "type": "textarea",
+        "id": "store_description",
+        "label": "Store Description",
+        "default": "Premium products and exceptional services delivered with care and quality you can trust."
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#8B4513"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color",
+        "default": "#D2691E"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent Color",
+        "default": "#DEB887"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#2C1810"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#FEFEFE"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading Font",
+        "default": "playfair_display_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body Font",
+        "default": "inter_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter URL"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin",
+        "label": "LinkedIn URL"
+      }
+    ]
+  },
+  {
+    "name": "Contact Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Phone Number",
+        "default": "(123) 456-7890"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email Address",
+        "default": "hello@yourstore.com"
+      },
+      {
+        "type": "textarea",
+        "id": "contact_address",
+        "label": "Address",
+        "default": "123 Business Street\nSuite 100\nNew York, NY 10001"
+      },
+      {
+        "type": "text",
+        "id": "contact_hours",
+        "label": "Business Hours",
+        "default": "Mon-Fri 9AM-6PM EST"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "footer_copyright",
+        "label": "Copyright Text",
+        "default": "<p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_links",
+        "label": "Footer Links"
+      }
+    ]
+  },
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "newsletter_enabled",
+        "label": "Enable Newsletter Signup",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title",
+        "default": "Stay Updated"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_description",
+        "label": "Newsletter Description",
+        "default": "Subscribe to our newsletter for exclusive offers and updates."
+      }
+    ]
+  },
+  {
+    "name": "Product Settings",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "min": 12,
+        "max": 48,
+        "step": 6,
+        "default": 24
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_filters",
+        "label": "Show product filters",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_reviews",
+        "label": "Show product reviews",
+        "default": true
+      }
+    ]
+  }
+]

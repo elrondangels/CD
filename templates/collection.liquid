@@ -1,0 +1,681 @@
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span>{{ collection.title }}</span>
+    </nav>
+    <h1 class="page-title">{{ collection.title }}</h1>
+    <p class="page-description">{{ collection.description }}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="products-layout">
+    <!-- Filters Sidebar -->
+    <aside class="filters-sidebar">
+      <div class="filters-header">
+        <h3 class="filters-title">Filters</h3>
+        <button class="filters-toggle" aria-label="Toggle filters">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="21" y1="4" x2="14" y2="4"/>
+            <line x1="10" y1="4" x2="3" y2="4"/>
+            <line x1="21" y1="12" x2="12" y2="12"/>
+            <line x1="8" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="20" x2="16" y2="20"/>
+            <line x1="12" y1="20" x2="3" y2="20"/>
+            <line x1="14" y1="2" x2="14" y2="6"/>
+            <line x1="8" y1="10" x2="8" y2="14"/>
+            <line x1="16" y1="18" x2="16" y2="22"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="filters-content">
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <h4 class="filter-title">Price Range</h4>
+          <div class="price-inputs">
+            <input type="number" placeholder="Min" class="price-input" id="price-min">
+            <span>-</span>
+            <input type="number" placeholder="Max" class="price-input" id="price-max">
+          </div>
+          <button class="btn btn-outline btn--small apply-price-filter">Apply</button>
+        </div>
+
+        <!-- Categories -->
+        {% if collection.all_tags.size > 0 %}
+        <div class="filter-group">
+          <h4 class="filter-title">Categories</h4>
+          <ul class="filter-list">
+            {% for tag in collection.all_tags %}
+            <li class="filter-item">
+              <label class="filter-label">
+                <input type="checkbox" class="filter-checkbox" value="{{ tag }}">
+                <span class="filter-checkmark"></span>
+                {{ tag }}
+              </label>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <!-- Availability -->
+        <div class="filter-group">
+          <h4 class="filter-title">Availability</h4>
+          <ul class="filter-list">
+            <li class="filter-item">
+              <label class="filter-label">
+                <input type="checkbox" class="filter-checkbox" value="in-stock">
+                <span class="filter-checkmark"></span>
+                In Stock
+              </label>
+            </li>
+            <li class="filter-item">
+              <label class="filter-label">
+                <input type="checkbox" class="filter-checkbox" value="on-sale">
+                <span class="filter-checkmark"></span>
+                On Sale
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Clear Filters -->
+        <button class="btn btn-secondary btn--small clear-filters">Clear All Filters</button>
+      </div>
+    </aside>
+
+    <!-- Products Main Content -->
+    <main class="products-main">
+      <!-- Sort and View Options -->
+      <div class="products-header">
+        <div class="products-count">
+          {{ collection.products_count }} {{ collection.products_count | pluralize: 'product', 'products' }}
+        </div>
+
+        <div class="products-controls">
+          <!-- Sort Dropdown -->
+          <div class="sort-dropdown">
+            <select class="sort-select">
+              <option value="manual">Featured</option>
+              <option value="best-selling">Best Selling</option>
+              <option value="title-ascending">Alphabetically, A-Z</option>
+              <option value="title-descending">Alphabetically, Z-A</option>
+              <option value="price-ascending">Price, low to high</option>
+              <option value="price-descending">Price, high to low</option>
+              <option value="created-descending">Date, new to old</option>
+              <option value="created-ascending">Date, old to new</option>
+            </select>
+          </div>
+
+          <!-- View Toggle -->
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid" aria-label="Grid view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+            </button>
+            <button class="view-btn" data-view="list" aria-label="List view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" data-view="grid">
+        {% paginate collection.products by 24 %}
+          {% for product in collection.products %}
+            <div class="product-card card">
+              <a href="{{ product.url }}" class="product-card__link">
+                <div class="product-card__image">
+                  <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+                  {% if product.compare_at_price > product.price %}
+                    <span class="product-card__badge">Sale</span>
+                  {% endif %}
+                  {% if product.available == false %}
+                    <span class="product-card__badge product-card__badge--sold">Sold Out</span>
+                  {% endif %}
+                </div>
+                <div class="product-card__content card__content">
+                  <h4 class="product-card__title">{{ product.title }}</h4>
+                  <div class="product-card__price">
+                    {% if product.compare_at_price > product.price %}
+                      <span class="price--compare">{{ product.compare_at_price | money }}</span>
+                    {% endif %}
+                    <span class="price--current">{{ product.price | money }}</span>
+                  </div>
+                  {% if product.description %}
+                    <p class="product-card__description">{{ product.description | strip_html | truncate: 100 }}</p>
+                  {% endif %}
+                </div>
+              </a>
+              <div class="product-card__actions">
+                {% if product.available %}
+                  <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                    <button type="submit" class="btn btn-primary btn--full">
+                      Add to Cart
+                    </button>
+                  </form>
+                {% else %}
+                  <button type="button" class="btn btn-secondary btn--full" disabled>
+                    Out of Stock
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endpaginate %}
+      </div>
+
+      <!-- Pagination -->
+      {% if paginate.pages > 1 %}
+        <nav class="pagination">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="pagination-link pagination-prev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"/>
+              </svg>
+              Previous
+            </a>
+          {% endif %}
+
+          <div class="pagination-numbers">
+            {% for part in paginate.parts %}
+              {% if part.is_link %}
+                <a href="{{ part.url }}" class="pagination-link">{{ part.title }}</a>
+              {% else %}
+                <span class="pagination-link current">{{ part.title }}</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="pagination-link pagination-next">
+              Next
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+            </a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </main>
+  </div>
+</div>
+
+<style>
+.page-header {
+  background-color: var(--color-bg-alt);
+  padding: var(--spacing-2xl) 0;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.page-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.page-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  max-width: 600px;
+}
+
+.products-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+/* Filters Sidebar */
+.filters-sidebar {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filters-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+}
+
+.filters-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.filters-content {
+  padding: var(--spacing-lg);
+}
+
+.filter-group {
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-text);
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.price-input {
+  flex: 1;
+  padding: var(--spacing-sm);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+}
+
+.filter-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.filter-checkmark {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-right: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.filter-checkbox:checked ~ .filter-checkmark {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.filter-checkbox:checked ~ .filter-checkmark::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.btn--small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+/* Products Main */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.products-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.products-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-select {
+  appearance: none;
+  background-color: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.view-toggle {
+  display: flex;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.view-btn.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.view-btn:not(.active):hover {
+  background-color: var(--color-bg-alt);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* List View */
+.products-grid[data-view="list"] {
+  grid-template-columns: 1fr;
+}
+
+.products-grid[data-view="list"] .product-card {
+  flex-direction: row;
+  height: auto;
+}
+
+.products-grid[data-view="list"] .product-card__image {
+  flex: 0 0 200px;
+  height: 200px;
+}
+
+.products-grid[data-view="list"] .product-card__content {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.products-grid[data-view="list"] .product-card__actions {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.product-card__badge--sold {
+  background-color: var(--color-text-light);
+}
+
+.product-card__description {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-top: var(--spacing-sm);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.pagination-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.pagination-link:hover,
+.pagination-link.current {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pagination-link.current {
+  background-color: var(--color-primary);
+  color: white;
+  cursor: default;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .products-layout {
+    grid-template-columns: 250px 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .products-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-sidebar {
+    display: none;
+  }
+
+  .filters-toggle {
+    display: block;
+  }
+
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .products-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .products-grid[data-view="list"] .product-card {
+    flex-direction: column;
+  }
+
+  .products-grid[data-view="list"] .product-card__image {
+    flex: none;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .view-toggle {
+    display: none;
+  }
+
+  .products-controls {
+    justify-content: flex-end;
+  }
+
+  .pagination-link {
+    padding: var(--spacing-sm);
+  }
+
+  .pagination-prev svg,
+  .pagination-next svg {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // View Toggle
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const productsGrid = document.querySelector('.products-grid');
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const view = this.dataset.view;
+
+      // Update active button
+      viewBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      // Update grid view
+      productsGrid.dataset.view = view;
+    });
+  });
+
+  // Mobile Filters Toggle
+  const filtersToggle = document.querySelector('.filters-toggle');
+  const filtersSidebar = document.querySelector('.filters-sidebar');
+
+  if (filtersToggle && filtersSidebar) {
+    filtersToggle.addEventListener('click', function() {
+      filtersSidebar.style.display = filtersSidebar.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  // Price Filter
+  const priceMin = document.getElementById('price-min');
+  const priceMax = document.getElementById('price-max');
+  const applyPriceFilter = document.querySelector('.apply-price-filter');
+
+  applyPriceFilter.addEventListener('click', function() {
+    const min = priceMin.value;
+    const max = priceMax.value;
+
+    // In a real Shopify implementation, this would modify the URL with price filters
+    let url = window.location.pathname;
+
+    if (min || max) {
+      const params = new URLSearchParams(window.location.search);
+      if (min) params.set('min_price', min * 100); // Shopify uses cents
+      if (max) params.set('max_price', max * 100);
+      url += '?' + params.toString();
+    }
+
+    window.location.href = url;
+  });
+
+  // Clear Filters
+  const clearFiltersBtn = document.querySelector('.clear-filters');
+  clearFiltersBtn.addEventListener('click', function() {
+    // Reset checkboxes
+    document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+
+    // Reset price inputs
+    priceMin.value = '';
+    priceMax.value = '';
+
+    // Redirect to base collection URL
+    window.location.href = window.location.pathname;
+  });
+
+  // Sort functionality
+  const sortSelect = document.querySelector('.sort-select');
+  sortSelect.addEventListener('change', function() {
+    const sortValue = this.value;
+    const params = new URLSearchParams(window.location.search);
+    params.set('sort_by', sortValue);
+    window.location.search = params.toString();
+  });
+});
+</script>

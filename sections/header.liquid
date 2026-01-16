@@ -1,0 +1,403 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <!-- Logo -->
+      <div class="header__logo">
+        <a href="/" class="logo">
+          <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" class="logo__image">
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="header__nav" role="navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link {{ 'home' | link_active }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/collections/all" class="nav-link {{ 'collections' | link_active }}">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="/pages/services" class="nav-link {{ 'services' | link_active }}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="/pages/about" class="nav-link {{ 'about' | link_active }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/pages/contact" class="nav-link {{ 'contact' | link_active }}">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <!-- Search -->
+        <button class="header__search-toggle" aria-label="Search">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+
+        <!-- Account -->
+        <a href="/account" class="header__account" aria-label="Account">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <!-- Cart -->
+        <a href="/cart" class="header__cart" aria-label="Cart">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8" cy="21" r="1"></circle>
+            <circle cx="19" cy="21" r="1"></circle>
+            <path d="m2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+          </svg>
+          <span class="cart-count">{{ cart.item_count }}</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="header__menu-toggle" aria-label="Menu">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+      <div class="search-overlay__inner">
+        <form action="/search" method="get" class="search-form">
+          <input
+            type="search"
+            name="q"
+            placeholder="Search products..."
+            class="search-input"
+            autocomplete="off"
+          >
+          <button type="submit" class="search-submit">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </form>
+        <button class="search-overlay__close" aria-label="Close search">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="/" class="mobile-nav-link">Home</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/collections/all" class="mobile-nav-link">Products</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/pages/services" class="mobile-nav-link">Services</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/pages/about" class="mobile-nav-link">About</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/pages/contact" class="mobile-nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  min-height: 70px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.logo__image {
+  height: 40px;
+  width: auto;
+}
+
+.header__nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-xl);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header__search-toggle,
+.header__account,
+.header__cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  color: var(--color-text);
+}
+
+.header__search-toggle:hover,
+.header__account:hover,
+.header__cart:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  min-width: 18px;
+  text-align: center;
+}
+
+.header__menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 1px;
+  transition: all var(--transition-fast);
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-overlay__inner {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 var(--spacing-md);
+  box-shadow: var(--shadow-xl);
+}
+
+.search-form {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.search-input {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-lg);
+}
+
+.search-submit {
+  padding: var(--spacing-md);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.search-submit:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.search-overlay__close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-lg) 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-md) var(--spacing-xl);
+  color: var(--color-text);
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--color-bg-alt);
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .header__nav {
+    display: block;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .header__inner {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .header__menu-toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Search toggle
+  const searchToggle = document.querySelector('.header__search-toggle');
+  const searchOverlay = document.querySelector('.search-overlay');
+  const searchClose = document.querySelector('.search-overlay__close');
+
+  searchToggle.addEventListener('click', function() {
+    searchOverlay.classList.toggle('active');
+    if (searchOverlay.classList.contains('active')) {
+      document.querySelector('.search-input').focus();
+    }
+  });
+
+  searchClose.addEventListener('click', function() {
+    searchOverlay.classList.remove('active');
+  });
+
+  // Close search on escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+      searchOverlay.classList.remove('active');
+    }
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.header__menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  let menuOpen = false;
+
+  menuToggle.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('active');
+
+    // Animate hamburger
+    const lines = menuToggle.querySelectorAll('.menu-toggle__line');
+    if (menuOpen) {
+      lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      lines[1].style.opacity = '0';
+      lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+      lines[0].style.transform = 'none';
+      lines[1].style.opacity = '1';
+      lines[2].style.transform = 'none';
+    }
+  });
+});
+</script>
